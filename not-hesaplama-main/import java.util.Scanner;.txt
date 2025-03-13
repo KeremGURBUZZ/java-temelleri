@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class main { 
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Lütfen Bir Sayi Giriniz:");
+        int sayi = scanner.nextInt();
+
+        AsalMi(sayi);
+    }
+
+    public static void AsalMi(int sayi) {
+        if (sayi < 2) {
+            System.out.println("Sayi Asal Değildir!");
+            return;
+        }
+
+        boolean asal = true;
+        for (int i = 2; i <= Math.sqrt(sayi); i++) {
+            if (sayi % i == 0) {
+                asal = false;
+                break;
+            }
+        }
+
+        if (asal) {
+            System.out.println("Sayi Asaldır!");
+        } else {
+            System.out.println("Sayi Asal Değildir!");
+        }
+    }
+}
